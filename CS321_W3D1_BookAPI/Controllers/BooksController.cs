@@ -22,7 +22,8 @@ namespace CS321_W3D1_BookAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_bookService);
+
+            return Ok(_bookService.GetAll());
         }
 
         // get specific book by id
