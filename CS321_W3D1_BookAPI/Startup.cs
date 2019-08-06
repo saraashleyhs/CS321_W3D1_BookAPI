@@ -1,4 +1,6 @@
-﻿using CS321_W3D1_BookAPI.Services;
+﻿using CS321_W3D1_BookAPI.Data;
+using CS321_W3D1_BookAPI.Models;
+using CS321_W3D1_BookAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +25,9 @@ namespace CS321_W3D1_BookAPI
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // TODO: register the BookContext for injection using AddDbContext
-
+            services.AddDbContext<BookContext>();
             // TODO: register the BookService for injection using AddScoped
+            services.AddScoped<IBookService, BookService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
