@@ -37,7 +37,6 @@ namespace CS321_W3D1_BookAPI.Services
         public IEnumerable<Book> GetAll()
         {
             // TODO: return all Books using ToList()
-            var AllBooks = _bookContext.Books;
 
             return _bookContext.Books.ToList();
         }
